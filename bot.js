@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const BOT = new Discord.Client();
 
 BOT.settings = require('./settings.json');
-BOT.colors = Discord.Constants.Colors;
+BOT.colors = require('chalk');
 
 BOT.log = require('./handlers/logHandler');
 const GET_DIR_SYNC = require('./module/getDirSync');
@@ -27,7 +27,7 @@ BOT.con.connect(err => {
   if (err) {
     throw err
   }
-  console.log("CONNECTED TO DATABASE");
+  console.log(BOT.colors.red("CONNECTED TO DATABASE"));
 })
 
 
