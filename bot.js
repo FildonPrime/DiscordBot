@@ -14,6 +14,22 @@ const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
 
+BOT.db = require('mysql');
+
+BOT.con = BOT.db.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "botdb"
+})
+
+BOT.con.connect(err => {
+  if (err) {
+    throw err
+  }
+  console.log("CONNECTED TO DATABASE");
+})
+
 
 let modules = GET_DIR_SYNC('./commands/');
 log(`Loading ${modules.length} modules...`);
