@@ -3,6 +3,7 @@ const BOT = new Discord.Client();
 
 BOT.settings = require('./settings.json');
 BOT.colors = require('chalk');
+BOT.mainColors = Discord.Constants.Colors;
 
 BOT.log = require('./handlers/logHandler');
 const GET_DIR_SYNC = require('./module/getDirSync');
@@ -22,14 +23,6 @@ BOT.con = BOT.db.createConnection({
   password: "",
   database: "botdb"
 })
-
-BOT.con.connect(err => {
-  if (err) {
-    throw err
-  }
-  console.log(BOT.colors.red("CONNECTED TO DATABASE"));
-})
-
 
 let modules = GET_DIR_SYNC('./commands/');
 log(`Loading ${modules.length} modules...`);
@@ -59,6 +52,10 @@ function loadEvent(client, module) {
     });
   });
 }
+
+//webhook
+
+BOT.webhook = null;
 
 
 BOT.login(BOT.settings.token);

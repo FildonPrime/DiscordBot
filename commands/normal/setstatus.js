@@ -1,35 +1,32 @@
 exports.run = (Bot, message, args) => {
-   
-    if (!message.member.hasPermission('ADMINISTRATOR')) {
-        message.channel.send({
-            embed: {
-                color: message.channel.Bot.color.RED,
-                title: 'Insufficent Permissions',
-                description: `You dont have sufficent permissions to use this command\n\nRequired Permission : ${this.help.userPermission}`
-            }
-        })
-    }
+  if (message.author.id != Bot.settings.ownerId) {
+    return Bot.emit('error', "Insufficent Permissions", message.channel)
+  }
 
-    let text = args.join(' ');
+  if (args < 0) {
+    return Bot.emit('error', "Insufficent Parameters", message.channel)
+  }
+  let type = args[0];
 
-    if (!text) {
-        return Bot.emit('error', "Incomplete Syntax", "Invalid status message\n\n`<prefix>status Use your custom status message here`", message.channel)
-    }
+  if (type < 0) {
+    return Bot.emit('error', "Insufficent Parameters", message.channel)
+  }
+  let setmsg = args[1].join(' ');
 
-    Bot.user.setActivity(`${text}`, {
-        type: 'WATCHING'
-    }).then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+  message.channel.send(`${type}`)
+  message.channel.send(`${setmsg}`)
+
 
 }
 exports.config = {
-    aliases: ['status'],
-    enabled: true
+  aliases: ['status'],
+  enabled: true
 };
 
 exports.help = {
-    name: 'setstatus',
-    botPermission: 'ADMINISTRATOR',
-    userPermission: 'ADMINISTRATOR',
-    usage: 'rs3x7',
-    example: [`status Gaming`]
+  name: 'setstatus',
+  botPermission: 'ADMINISTRATOR',
+  userPermission: 'ADMINISTRATOR',
+  usage: 'rs3x7',
+  example: [`status Gaming`]
 };
