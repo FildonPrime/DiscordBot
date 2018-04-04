@@ -4,10 +4,6 @@ const BOT = new Discord.Client();
 BOT.settings = require('./settings.json');
 BOT.colors = Discord.Constants.Colors;
 
-BOT.sql = require('sqlite');
-BOT.sql.open('./dicer.sqlite')
-
-
 BOT.log = require('./handlers/logHandler');
 const GET_DIR_SYNC = require('./module/getDirSync');
 const moment = require('moment');
@@ -50,4 +46,3 @@ function loadEvent(client, module) {
 
 
 BOT.login(BOT.settings.token);
-
