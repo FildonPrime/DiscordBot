@@ -21,27 +21,6 @@ exports.run = (Bot, message, args) => {
 
     if (user.id === message.author.id) return message.reply('SelfHarm is bad')
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 exports.config = {
     aliases: ['h'],

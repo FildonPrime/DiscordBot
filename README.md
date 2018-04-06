@@ -14,3 +14,5 @@ All commands will be updated once the bot-base is completed.
     "webhookToken" : "TOKEN"
 }
 ```
+
+Current Status : **Kick command is not complete**
