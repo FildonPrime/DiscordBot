@@ -53,6 +53,6 @@ exports.help = {
     name: 'ban',
     botPermission: 'BAN_MEMBER',
     userPermission: 'BAN_MEMBER',
-    usage: `\`${Bot.settings.prefix}\`ban \`@user\``,
+    usage: `\`<prefix>\`ban \`@user\``,
     example: [`ban`]
 };
