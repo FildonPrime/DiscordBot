@@ -1,10 +1,10 @@
 exports.run = (Bot, message, args) => {
 
-    if (!message.guild.me.hasPermissions(this.help.botPermission)) {
+    if (!message.guild.me.hasPermission(this.help.botPermission)) {
         return Bot.emit('botNoPermission', this.help.botPermission, message.channel)
     }
 
-    if (!message.member.hasPermissions(this.help.botPermission)) {
+    if (!message.member.hasPermission(this.help.botPermission)) {
         return Bot.emit('userNoPermission', this.help.botPermission, message.channel)
     }
 
