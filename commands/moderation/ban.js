@@ -51,8 +51,8 @@ exports.config = {
 
 exports.help = {
     name: 'ban',
-    botPermission: 'BAN_MEMBER',
-    userPermission: 'BAN_MEMBER',
+    botPermission: 'BAN_MEMBERS',
+    userPermission: 'BAN_MEMBERS',
     usage: `\`<prefix>\`ban \`@user\``,
     example: [`ban`]
 };
