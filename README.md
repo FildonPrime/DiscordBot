@@ -15,4 +15,7 @@ All commands will be updated once the bot-base is completed.
 }
 ```
 
-Current Status : **Kick command is not complete**
+Current Status : 
+
+**Added Kick**
+**Added Ban**
