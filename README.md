@@ -17,5 +17,5 @@ All commands will be updated once the bot-base is completed.
 
 Current Status : 
 
-**Added Kick**
+**Added Kick\n**
 **Added Ban**
