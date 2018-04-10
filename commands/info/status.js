@@ -14,16 +14,14 @@ exports.run = (Bot, message, args) => {
     var description, title;
 
 
-    let type = args[1];
+    let type = args[0];
     const embed = new Discord.RichEmbed()
         .setTitle(this.title)
         .setDescription(description);
 
     const embedWithoutTitle = new Discord.RichEmbed()
         .setDescription(description)
-
-
-    message.channel.send(`${type}`)
+        
     switch (type) {
         case 'bot':
             {
