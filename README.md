@@ -9,9 +9,12 @@ All commands will be updated once the bot-base is completed.
     "botId" : "ID",
     "ownerId" : "ID",
     "prefix" : "!",
-    "logchannelId" : "ID",
-    "webhookId" : "ID",
-    "webhookToken" : "TOKEN"
+    "logchannelId" : "logchannelID",
+    "webhook_id" : "WebHookID",
+    "webhook_token" : "WebHook Token",
+    "nickNameEmbed": 123456,
+    "moderationColor: 123456,
+    "color": 123456
 }
 ```
 
