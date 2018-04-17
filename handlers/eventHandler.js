@@ -6,4 +6,5 @@ module.exports = Bot => {
   Bot.on('error', LOAD_EVENTS('error'));
   Bot.on('botNoPermission', LOAD_EVENTS('botNoPermission'));
   Bot.on('userNoPermission', LOAD_EVENTS('userNoPermission'));
+  Bot.on('messageDelete', LOAD_EVENTS('messageDelete'));
 }
