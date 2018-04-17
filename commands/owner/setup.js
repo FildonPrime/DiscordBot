@@ -8,15 +8,26 @@ exports.run = (Bot, message, args) => {
     switch(type) {
         case 'tables': 
         {
-            var query
+            var Sqlquery = "CREATE TABLE logs (Counter INT NOT NULL AUTO_INCREMENT, messageId INTEGER(36), messageAuthor VARCHAR(36), messageContent VARCHAR(256)"
+            Bot.con.query(Sqlquery, function(e, r,f) {
+                if(e) {
+                    return Bot.emit('error', "MySql Error, Please mention the BOT author", message.channel)
+                }
+                message.channel.send({
+                    embed: {
+                        description: "Success! Tables recached and created."
+                    }
+                })
+            })
+        }
+        default: {
+            message.channel.send({
+                embed: {
+                    description: "Invalid option. Please recheck."
+                }
+            })
         }
     }
-
-
-
-
-
-
 }
 exports.config = {
     aliases: ['setup'],
