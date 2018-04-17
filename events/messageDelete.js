@@ -13,6 +13,10 @@ module.exports = async message => {
             console.log(e)
             return message.client.emit('error', "MySql Error, Please mention the BOT author", message.channel)
         }
-        channel.send("MESSAGE DELTED")
+        channel.send({
+            embed: {
+                description: `**User :** ${message.author}\n**Content :** ${msg}`
+            }
+        })
     })
 }
