@@ -5,8 +5,8 @@ module.exports = async message => {
     let channel = message.guild.channels.get(channelId);
     let msg = await message.content;
 
-    var SqlQuery = "INSERT INTO logs (Counter, messageAuthor, messageContent, messageId) VALUES (?, ?, ?, ?)"
-    var inserts = [1, message.author, msg, message.id]
+    var SqlQuery = "INSERT INTO logs (messageAuthor, messageContent, messageId) VALUES (?, ?, ?)"
+    var inserts = [message.author.username, msg, message.id]
     SqlQuery = message.client.db.format(SqlQuery, inserts);
     message.client.con.query(SqlQuery, function(e,r,f) {
         if(e) {
