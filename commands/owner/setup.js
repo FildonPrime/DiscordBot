@@ -8,7 +8,7 @@ exports.run = (Bot, message, args) => {
     switch(type) {
         case 'tables': 
         {
-            var Sqlquery = "CREATE TABLE logs (messageId INTEGER(36), messageAuthor VARCHAR(36), messageContent VARCHAR(256)"
+            var Sqlquery = "CREATE TABLE logs (messageId INTEGER(36), messageAuthor VARCHAR(36), messageContent VARCHAR(256))"
             Bot.con.query(Sqlquery, function(e, r,f) {
                 if(e) {
                     console.log(e)
