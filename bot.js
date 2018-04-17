@@ -18,10 +18,10 @@ const log = message => {
 BOT.db = require('mysql');
 
 BOT.con = BOT.db.createConnection({
-  host: BOT.host,
-  user: BOT.user,
-  password: BOT.password,
-  database: BOT.database
+  host: BOT.settings.host,
+  user: BOT.settings.user,
+  password: BOT.settings.password,
+  database: BOT.settings.database
 })
 
 let modules = GET_DIR_SYNC('./commands/');
