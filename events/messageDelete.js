@@ -15,6 +15,7 @@ module.exports = async message => {
             return message.client.emit('error', "MySql Error, Please mention the BOT author", channels.channel)
         }
         let time = new Date();
+        const Discord = require('discord.js')
         const embed = new Discord.RichEmbed()
             .setTitle(`${time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()} | Message Delete`)
             .setDescription(`${user}`)
